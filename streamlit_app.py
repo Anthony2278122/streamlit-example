@@ -33,7 +33,7 @@ num_baguette = st.slider("Number of points in spiral", 1, 10, 3)
 
 if starter_type == "dry yeast":
     floor_per_baguette = 173.33
-    starter_per_baguette = 7
+    starter_per_baguette = 4.67
     wheight = 0
     salt_per_baguette = 3
 else:
@@ -43,7 +43,7 @@ else:
     salt_per_baguette = 4
 
 if floor_style == "white baguette":
-    hydration = 0.72
+    hydration = 0.86
     total_floor = np.round(num_baguette * floor_per_baguette - wheight * num_baguette * starter_per_baguette)
     floor_ratio = 1
 else:
