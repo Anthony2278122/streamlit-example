@@ -4,19 +4,16 @@ import pandas as pd
 import streamlit as st
 
 """
-# Welcome to Streamlit!
+# Welcome to Streamlit bread maker!
 
-Edit `/streamlit_app.py` to customize this app to your heart's desire :heart:.
-If you have any questions, checkout our [documentation](https://docs.streamlit.io) and [community
-forums](https://discuss.streamlit.io).
-
-In the meantime, below is an example of what you can do with just a few lines of code:
+Use this app to cutomize your receipe for home made bread.
 """
 
-num_points = st.slider("Number of points in spiral", 1, 10000, 1100)
-num_turns = st.slider("Number of turns in spiral", 1, 300, 31)
+st.subtitle("my subs")
+num_baguette = st.slider("Number of points in spiral", 1, 1, 10)
+num_turns = st.slider("Number of turns in spiral",0, 300, 31)
 
-indices = np.linspace(0, 1, num_points)
+indices = np.linspace(0, 1, num_baguette)
 theta = 2 * np.pi * num_turns * indices
 radius = indices
 
@@ -27,7 +24,7 @@ df = pd.DataFrame({
     "x": x,
     "y": y,
     "idx": indices,
-    "rand": np.random.randn(num_points),
+    "rand": np.random.randn(num_baguette),
 })
 
 st.altair_chart(alt.Chart(df, height=700, width=700)
@@ -38,3 +35,5 @@ st.altair_chart(alt.Chart(df, height=700, width=700)
         color=alt.Color("idx", legend=None, scale=alt.Scale()),
         size=alt.Size("rand", legend=None, scale=alt.Scale(range=[1, 150])),
     ))
+
+st.write("Job Done!")
