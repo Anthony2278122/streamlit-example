@@ -12,7 +12,7 @@ Ideally, use a bread floor with at least 12.5% protein (gluten).
 
 Starter is made of half unbleached bread floor and half water. 
 
-Hydration is set up at 72%.
+Hydration is set up at 72% for sourdough and 86% for dry yeast.
 """
 
 st.subheader("Make your own baguette: ")
