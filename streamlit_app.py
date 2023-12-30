@@ -58,11 +58,11 @@ receipe = {
     "total salt [g]": int(np.round(num_baguette * salt_per_baguette)),
     "total water [g]" : int(np.round(num_baguette * floor_per_baguette * hydration - wheight * num_baguette * starter_per_baguette))
     }
-
-receipe["whole wheat floor [g]"] = int(np.round(total_floor * (1 - floor_ratio)))
+if floor_style == "whole wheat baguette":
+    receipe["whole wheat floor [g]"] = int(np.round(total_floor * (1 - floor_ratio)))
 
 st.subheader("needed ingredients:")
 st.write(receipe)
-st.dataframe(pd.DataFrame(receipe, columns=["quantities"]))
+st.write(pd.DataFrame(receipe))
 
 st.write("Job Done!")
