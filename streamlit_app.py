@@ -20,13 +20,13 @@ st.subheader("Make your own baguette: ")
 starter_type = st.radio(
     "What kind of starter are you using:",
     ["dry yeast", "sourdough starter"],
-    index=None,
+    index=0,
 )
 
 floor_style = st.radio(
     "What kind of bread",
     ["white baguette", "whole wheat baguette"],
-    index=None,
+    index=0,
 )
 
 num_baguette = st.slider("Number of points in spiral", 1, 10, 3)
@@ -63,6 +63,6 @@ receipe["whole wheat floor"] = int(np.round(total_floor * (1 - floor_ratio)))
 
 st.subheader("needed ingredients:")
 st.write(receipe)
-st.dataframe(pd.DataFrame(receipe))
+st.dataframe(receipe)
 
 st.write("Job Done!")
