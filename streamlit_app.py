@@ -7,33 +7,30 @@ import streamlit as st
 # Welcome to Streamlit bread maker!
 
 Use this app to cutomize your receipe for home made bread.
+Ideally, use a bread floor with at least 12.5% protein (gluten).
+Hydration is set up at 72%.
 """
 
-st.subheader("my subs")
+st.subheader("How many baguette?")
+
+genre = st.radio(
+    "What kind of bread",
+    ["white baguette", "whole wheat baguette"],
+    index=None,
+)
+
 num_baguette = st.slider("Number of points in spiral", 1, 1, 10)
-num_turns = st.slider("Number of turns in spiral",0, 300, 31)
 
-indices = np.linspace(0, 1, num_baguette)
-theta = 2 * np.pi * num_turns * indices
-radius = indices
+floor_per_baguette = 200
+starter_per_baguette = 60
 
-x = radius * np.cos(theta)
-y = radius * np.sin(theta)
+total_floor = num_baguette * floor_per_baguette
+total_starter = num_baguette * starter_per_baguette
+total_water = total_floor * 0.72
 
-df = pd.DataFrame({
-    "x": x,
-    "y": y,
-    "idx": indices,
-    "rand": np.random.randn(num_baguette),
-})
 
-st.altair_chart(alt.Chart(df, height=700, width=700)
-    .mark_point(filled=True)
-    .encode(
-        x=alt.X("x", axis=None),
-        y=alt.Y("y", axis=None),
-        color=alt.Color("idx", legend=None, scale=alt.Scale()),
-        size=alt.Size("rand", legend=None, scale=alt.Scale(range=[1, 150])),
-    ))
+st.subheader("needed ingredients:")
+
+st.write("Floor: ")
 
 st.write("Job Done!")
