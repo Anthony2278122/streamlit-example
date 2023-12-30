@@ -9,7 +9,7 @@ import streamlit as st
 Use this app to cutomize your receipe for home made bread.
 """
 
-st.subtitle("my subs")
+st.subheader("my subs")
 num_baguette = st.slider("Number of points in spiral", 1, 1, 10)
 num_turns = st.slider("Number of turns in spiral",0, 300, 31)
 
