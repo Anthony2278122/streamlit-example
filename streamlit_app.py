@@ -63,6 +63,6 @@ receipe["whole wheat floor"] = int(np.round(total_floor * (1 - floor_ratio)))
 
 st.subheader("needed ingredients:")
 st.write(receipe)
-st.dataframe(pd.DataFrame.from_dict(receipe, orient="columns"))
+st.dataframe(pd.DataFrame(receipe))
 
 st.write("Job Done!")
