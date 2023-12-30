@@ -53,16 +53,16 @@ else:
 
 
 receipe = {
-    starter_type + " [g]" : np.round(num_baguette * starter_per_baguette),
-    "total white floor [g]" : np.round(total_floor * floor_ratio),
-    "total salt [g]": np.round(num_baguette * salt_per_baguette),
-    "total water [g]" : np.round(num_baguette * floor_per_baguette * hydration - wheight * num_baguette * starter_per_baguette)
+    starter_type + " [g]" : int(np.round(num_baguette * starter_per_baguette)),
+    "total white floor [g]" : int(np.round(total_floor * floor_ratio)),
+    "total salt [g]": int(np.round(num_baguette * salt_per_baguette)),
+    "total water [g]" : int(np.round(num_baguette * floor_per_baguette * hydration - wheight * num_baguette * starter_per_baguette))
     }
 
-receipe["whole wheat floor"] = total_floor * (1 - floor_ratio)
+receipe["whole wheat floor"] = int(np.round(total_floor * (1 - floor_ratio)))
 
 st.subheader("needed ingredients:")
 st.write(receipe)
-st.dataframe(pd.DataFrame.from_dict(receipe, orient="columns", dtype=int ))
+st.dataframe(pd.DataFrame.from_dict(receipe, orient="columns"))
 
 st.write("Job Done!")
