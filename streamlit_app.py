@@ -43,7 +43,7 @@ else:
     salt_per_baguette = 4
 
 if floor_style == "white baguette":
-    hydration = 0.86
+    hydration = 0.8654
     total_floor = np.round(num_baguette * floor_per_baguette - wheight * num_baguette * starter_per_baguette)
     floor_ratio = 1
 else:
