@@ -50,6 +50,6 @@ receipe = {
 
 st.subheader("needed ingredients:")
 
-st.DataFrame(pd.DataFrame.from_dict(receipe))
+st.dataframe(pd.DataFrame.from_dict(receipe))
 
 st.write("Job Done!")
