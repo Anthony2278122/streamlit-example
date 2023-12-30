@@ -36,18 +36,18 @@ if starter_type == "dry yeast":
     starter_per_baguette = 4.67
     wheight = 0
     salt_per_baguette = 3
+    hydration = 0.8654
 else:
     floor_per_baguette = 200
     starter_per_baguette = 50
     wheight = 0.5
     salt_per_baguette = 4
+    hydration = 0.72
 
 if floor_style == "white baguette":
-    hydration = 0.8654
     total_floor = np.round(num_baguette * floor_per_baguette - wheight * num_baguette * starter_per_baguette)
     floor_ratio = 1
 else:
-    hydration = 0.72
     total_floor = np.round(num_baguette * floor_per_baguette - wheight * num_baguette * starter_per_baguette)
     floor_ratio = 0.8
 
