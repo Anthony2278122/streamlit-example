@@ -7,8 +7,11 @@ import streamlit as st
 # Welcome to Streamlit bread maker!
 
 Use this app to cutomize your receipe for home made bread.
+
 Ideally, use a bread floor with at least 12.5% protein (gluten).
+
 Starter is made of half unbleached bread floor and half water. 
+
 Hydration is set up at 72%.
 """
 
@@ -49,7 +52,7 @@ receipe = {
     }
 
 st.subheader("needed ingredients:")
-
-st.dataframe(pd.DataFrame.from_dict(receipe))
+st.write(receipe)
+st.dataframe(pd.DataFrame.from_dict(receipe, columns=["a","b","c"]))
 
 st.write("Job Done!")
