@@ -25,7 +25,7 @@ starter_type = st.radio(
 
 floor_style = st.radio(
     "What kind of bread",
-    ["white baguette", "whole wheat baguette"],
+    ["white floor", "whole wheat floor"],
     index=0,
 )
 
@@ -44,7 +44,7 @@ else:
     salt_per_baguette = 4
     hydration = 0.72
 
-if floor_style == "white baguette":
+if floor_style == "white floor":
     total_floor = np.round(num_baguette * floor_per_baguette - wheight * num_baguette * starter_per_baguette)
     floor_ratio = 1
 else:
@@ -58,7 +58,7 @@ receipe = {
     "water [g]" : int(np.round(total_floor * hydration)),
     "white floor [g]" : int(np.round(total_floor * floor_ratio)),
     }
-if floor_style == "whole wheat baguette":
+if floor_style == "whole wheat floor":
     receipe["whole wheat floor [g]"] = int(np.round(total_floor * (1 - floor_ratio)))
 
 st.subheader("needed ingredients:")
