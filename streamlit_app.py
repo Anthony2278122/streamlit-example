@@ -66,7 +66,5 @@ st.subheader("needed ingredients:")
 df = pd.DataFrame.from_records([receipe], index=None).transpose()
 st.write(df)
 
-df
-
-st.dataframe(df)
+st.dataframe(df, hide_index=True)
 st.write("Job Done!")
