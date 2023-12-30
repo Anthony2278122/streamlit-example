@@ -63,6 +63,6 @@ if floor_style == "whole wheat baguette":
 
 st.subheader("needed ingredients:")
 st.write(receipe)
-df = pd.DataFrame.from_dict(receipe, index=[0])
+df = pd.DataFrame.from_records(receipe)
 
 st.write("Job Done!")
