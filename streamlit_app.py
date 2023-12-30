@@ -46,9 +46,9 @@ else:
     hydration = 0.72
 
 receipe = {
-    starter_type: np.round(num_baguette * starter_per_baguette),
-    "total_floor [g]" : np.round(num_baguette * floor_per_baguette - wheight * num_baguette * starter_per_baguette),
-    "total_water [g]" : np.round(num_baguette * floor_per_baguette * hydration - wheight * num_baguette * starter_per_baguette)
+    starter_type + " [g]" : np.round(num_baguette * starter_per_baguette),
+    "total floor [g]" : np.round(num_baguette * floor_per_baguette - wheight * num_baguette * starter_per_baguette),
+    "total water [g]" : np.round(num_baguette * floor_per_baguette * hydration - wheight * num_baguette * starter_per_baguette)
     }
 
 st.subheader("needed ingredients:")
