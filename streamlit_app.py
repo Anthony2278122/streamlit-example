@@ -1,4 +1,4 @@
-import altair as alt
+
 import numpy as np
 import pandas as pd
 import streamlit as st
@@ -8,29 +8,48 @@ import streamlit as st
 
 Use this app to cutomize your receipe for home made bread.
 Ideally, use a bread floor with at least 12.5% protein (gluten).
+Starter is made of half unbleached bread floor and half water. 
 Hydration is set up at 72%.
 """
 
-st.subheader("How many baguette?")
+st.subheader("Make your own baguette: ")
 
-genre = st.radio(
+starter_type = st.radio(
+    "What kind of starter are you using:",
+    ["dry yeast", "sourdough starter"],
+    index=None,
+)
+
+floor_style = st.radio(
     "What kind of bread",
     ["white baguette", "whole wheat baguette"],
     index=None,
 )
 
-num_baguette = st.slider("Number of points in spiral", 1, 1, 10)
+num_baguette = st.slider("Number of points in spiral", 1, 10, 3)
 
-floor_per_baguette = 200
-starter_per_baguette = 60
+if starter_type == "dry yeast":
+    floor_per_baguette = 173
+    starter_per_baguette = 7
+    wheight = 0
+else:
+    floor_per_baguette = 200
+    starter_per_baguette = 50
+    wheight = 0.5
 
-total_floor = num_baguette * floor_per_baguette
-total_starter = num_baguette * starter_per_baguette
-total_water = total_floor * 0.72
+if floor_style == "white baguette":
+    hydration = 0.72
+else:
+    hydration = 0.72
 
+receipe = {
+    starter_type: np.round(num_baguette * starter_per_baguette),
+    "total_floor [g]" : np.round(num_baguette * floor_per_baguette - wheight * num_baguette * starter_per_baguette),
+    "total_water [g]" : np.round(num_baguette * floor_per_baguette * hydration - wheight * num_baguette * starter_per_baguette)
+    }
 
 st.subheader("needed ingredients:")
 
-st.write("Floor: ")
+st.DataFrame(pd.DataFrame.from_dict(receipe))
 
 st.write("Job Done!")
