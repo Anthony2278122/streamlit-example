@@ -64,7 +64,7 @@ if floor_style == "whole wheat baguette":
 st.subheader("needed ingredients:")
 #st.write(receipe)
 df = pd.DataFrame.from_records([receipe]).transpose()
-st.write(df.columns)
+st.write(df.columns.values)
 
 
 df.columns.values[0] = "quantities"
