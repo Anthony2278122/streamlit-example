@@ -62,7 +62,10 @@ if floor_style == "whole wheat baguette":
     receipe["whole wheat floor [g]"] = int(np.round(total_floor * (1 - floor_ratio)))
 
 st.subheader("needed ingredients:")
-st.write(receipe)
-df = pd.DataFrame.from_records([receipe]).transpose().rename(columns=["quantities"])
+#st.write(receipe)
+df = pd.DataFrame.from_records([receipe]).transpose()
+df.columns.values[0] = "quantities"
+
+
 st.dataframe(df)
 st.write("Job Done!")
