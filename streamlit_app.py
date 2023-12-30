@@ -54,9 +54,9 @@ else:
 
 receipe = {
     starter_type + " [g]" : int(np.round(num_baguette * starter_per_baguette)),
-    "total white floor [g]" : int(np.round(total_floor * floor_ratio)),
-    "total salt [g]": int(np.round(num_baguette * salt_per_baguette)),
-    "total water [g]" : int(np.round(total_floor * hydration))
+    "salt [g]": int(np.round(num_baguette * salt_per_baguette)),
+    "water [g]" : int(np.round(total_floor * hydration)),
+    "white floor [g]" : int(np.round(total_floor * floor_ratio)),
     }
 if floor_style == "whole wheat baguette":
     receipe["whole wheat floor [g]"] = int(np.round(total_floor * (1 - floor_ratio)))
