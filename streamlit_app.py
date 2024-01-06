@@ -64,4 +64,18 @@ df = pd.DataFrame.from_records([receipe], index=None).transpose()
 df = df.rename(columns={0: "quantities"})
 
 st.dataframe(df)
-st.write("Job Done!")
+
+expander = st.expander("See explanation")
+expander.write('''
+    Take your sourdough out of the fridge. Let it rest on your counter to warm-up a little.
+    Then feed it with half water and floor. 50g each if you need 100g starter for instance.
+    Let it raise for a couple of hour.
+    ''')
+expander.image("https://www.theperfectloaf.com/wp-content/uploads/2020/08/theperfectloaf-whats-the-difference-between-starter-levain-1-2-1080x720.jpg")
+expander.write('''
+When the sourdough has doubled (at least) you can use it!
+    Take out the quantity you need and put the remqining sourdough back in your fridge;
+    ''')
+
+# Webapp link :
+# https://anthony2278122-streamlit-example-streamlit-app-kwicbv.streamlit.app/
