@@ -116,7 +116,9 @@ expander.write('''
     Cook them for about 20min, depending on the crust you like.
     ''')
 expender.image("https://www.kingarthurbaking.com/sites/default/files/2022-08/step-15.jpg")
-
+expander.write('''
+    Job Done! Congratulations!
+    ''')
 
 # Webapp link :
 # https://anthony2278122-streamlit-example-streamlit-app-kwicbv.streamlit.app/
