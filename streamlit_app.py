@@ -9,7 +9,7 @@ import streamlit as st
 Use this app to cutomize your receipe for home made bread.
 Ideally, use a bread floor with 12.7% protein (gluten).
 Starter is made of half unbleached bread floor and half water.
-Hydration is set up at 72% for sourdough and 86% for dry yeast.
+Hydration is set up at 72% for sourdough and 75% for dry yeast.
 """
 
 st.subheader("Make your own baguette: ")
