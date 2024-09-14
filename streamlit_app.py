@@ -114,6 +114,7 @@ expander.write('''
     Carefully pour a glass of water into the cast iron pan, and quickly shut the oven door.
     The billowing steam created by the boiling water will help the baguettes rise, and give them a shiny thin crust.
     Cook them for about 20min, depending on the crust you like.
+    ''')
 expender.image("https://www.kingarthurbaking.com/sites/default/files/2022-08/step-15.jpg")
 
 
